@@ -6,10 +6,15 @@
     <title>Team Building Activity Checklist</title>
     <style>
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
             body { 
-                margin: 0.5in; 
+                margin: 0.4in 0.3in !important; 
                 background: white !important;
                 color: black !important;
+                font-size: 11px !important;
             }
             .no-break { 
                 page-break-inside: avoid; 
@@ -18,42 +23,56 @@
                 background: none !important;
                 color: black !important;
                 border: 2px solid black;
-                margin: 0 0 1in 0;
-                padding: 0.5in;
+                margin: 0 0 0.3in 0 !important;
+                padding: 0.2in !important;
+                page-break-after: avoid;
             }
             h1 {
                 color: black !important;
+                font-size: 18px !important;
+                margin: 0 !important;
             }
             .section {
                 background: white !important;
                 box-shadow: none !important;
-                border: 1px solid #ccc !important;
-                margin-bottom: 0.5in;
-                padding: 0.3in;
+                border: 1px solid #999 !important;
+                margin-bottom: 0.2in !important;
+                padding: 0.15in !important;
+                page-break-inside: avoid;
             }
             .section-title {
                 color: black !important;
                 border-bottom: 1px solid #999 !important;
+                font-size: 14px !important;
+                margin-bottom: 0.1in !important;
+                padding-bottom: 0.05in !important;
             }
             .activity-item {
                 border: none !important;
-                padding: 0.1in;
-                grid-template-columns: 40px 1fr 30px !important;
+                padding: 0.05in 0.1in !important;
+                margin-bottom: 0.05in !important;
+                grid-template-columns: 35px 1fr 25px !important;
+                gap: 8px !important;
             }
             .activity-item:hover {
                 background-color: transparent !important;
             }
             .activity-name {
                 color: black !important;
+                font-size: 10px !important;
+                line-height: 1.2 !important;
+            }
+            .emoji-column {
+                font-size: 14px !important;
             }
             .checkbox {
                 -webkit-appearance: none;
                 appearance: none;
-                border: 2px solid black !important;
+                border: 1.5px solid black !important;
                 background: white !important;
-                width: 16px;
-                height: 16px;
-                border-radius: 2px;
+                width: 12px !important;
+                height: 12px !important;
+                border-radius: 1px;
             }
             .checkbox:checked {
                 background: black !important;
@@ -61,14 +80,17 @@
             .checkbox:checked::after {
                 content: '✓';
                 color: white;
-                font-size: 12px;
+                font-size: 9px;
                 display: block;
                 text-align: center;
-                line-height: 12px;
+                line-height: 10px;
             }
             .footer {
                 color: black !important;
                 border-top: 1px solid #999 !important;
+                font-size: 10px !important;
+                margin-top: 0.2in !important;
+                padding-top: 0.1in !important;
             }
         }
         
@@ -270,6 +292,27 @@
             border-top: 1px solid #e5e7eb;
             padding-top: 24px;
         }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 16px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(139, 92, 246, 0.2);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            text-decoration: none;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -426,7 +469,8 @@
     </div>
     
     <div class="footer">
-        Team Building Event • Check off activities as completed
+        <a href="index.html" class="back-button">← Back to Index</a>
+        <div>Team Building Event • Check off activities as completed</div>
     </div>
 </body>
 </html>

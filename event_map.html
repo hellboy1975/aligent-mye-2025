@@ -74,6 +74,27 @@
             text-align: center;
         }
 
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 20px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(139, 92, 246, 0.2);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
         .floor-plan-wrapper {
             background: white;
             border: 2px solid #e5e7eb;
@@ -125,8 +146,10 @@
 
     <div class="map-container">
         <div class="floor-plan-wrapper">
-            <img src="event-activities-map.png" alt="Aligent Mid Year Event Activities Map" class="floor-plan">
+            <img src="event-activities-map.jpg" alt="Aligent Mid Year Event Activities Map" class="floor-plan">
         </div>
+        
+        <a href="index.html" class="back-button">← Back to Index</a>
     </div>
 </body>
 </html>
