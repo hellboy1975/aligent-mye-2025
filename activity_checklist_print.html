@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Building Activity Checklist - Print</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.2;
+            color: #000;
+            background: white;
+            font-size: 10px;
+            margin: 0.4in 0.3in;
+        }
+        
+        .header {
+            border: 2px solid #000;
+            padding: 0.15in;
+            text-align: center;
+            margin-bottom: 0.2in;
+        }
+        
+        h1 {
+            color: #000;
+            font-size: 18px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .section {
+            border: 1px solid #666;
+            margin-bottom: 0.15in;
+            padding: 0.1in;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 0.08in;
+            padding-bottom: 0.03in;
+            border-bottom: 1px solid #999;
+        }
+
+        .activity-item {
+            display: grid;
+            grid-template-columns: 32px 1fr 22px;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.05in;
+            padding: 0.04in 0.06in;
+        }
+        
+        .emoji-column {
+            font-size: 13px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+        }
+        
+        .activity-name {
+            font-size: 10px;
+            font-weight: normal;
+            color: #000;
+            line-height: 1.2;
+        }
+        
+        .checkbox {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #000;
+            background: white;
+            justify-self: center;
+        }
+
+        .footer {
+            color: #000;
+            border-top: 1px solid #999;
+            font-size: 7px;
+            margin-top: 0.15in;
+            padding-top: 0.05in;
+            text-align: center;
+        }
+
+        /* Specific spacing adjustments for A4 */
+        .section:first-of-type {
+            margin-top: 0;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 0.1in;
+        }
+
+        /* Ensure single page */
+        @page {
+            size: A4;
+            margin: 0.4in 0.3in;
+        }
+
+        @media print {
+            body {
+                margin: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Team Building Activity Checklist</h1>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">🎯 Opening Ceremony</div>
+        <div class="activity-item">
+            <div class="emoji-column">🎤</div>
+            <div class="activity-name">Opening ceremony</div>
+            <div class="checkbox"></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">🤝 Team Activities</div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🥢</div>
+            <div class="activity-name">Chopsticks relay</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">👓</div>
+            <div class="activity-name">Blindfold Drawing</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🧠</div>
+            <div class="activity-name">Memory challenge</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🌶️</div>
+            <div class="activity-name">Tasting challenge</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🍝</div>
+            <div class="activity-name">Spaghetti tower building</div>
+            <div class="checkbox"></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">🌍 Around the World Activities</div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🍹</div>
+            <div class="activity-name">Drinks station</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇩🇰</div>
+            <div class="activity-name">Denmark: Lego, puzzle, quiz, beer</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🦄</div>
+            <div class="activity-name">Dominaria: Magic: The Gathering</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇨🇳</div>
+            <div class="activity-name">Chinese dumpling building</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🀄</div>
+            <div class="activity-name">Mahjong: lessons and games</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🏓</div>
+            <div class="activity-name">Table tennis: lessons and competition</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">
+                <span>🇦🇺</span>
+                <span>🇮🇪</span>
+            </div>
+            <div class="activity-name">Australia + Ireland: Beer tasting</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">
+                <span>🇧🇷</span>
+                <span>🇦🇷</span>
+            </div>
+            <div class="activity-name">South America food, music and games</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">
+                <span>🇮🇹</span>
+                <span>🇯🇵</span>
+            </div>
+            <div class="activity-name">Italian + Mario Kart</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇮🇳</div>
+            <div class="activity-name">Indian food + games</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇱🇹</div>
+            <div class="activity-name">Lithuanian basketball</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇫🇷</div>
+            <div class="activity-name">France - food, indoor petanque, music</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇱🇰</div>
+            <div class="activity-name">Sri Lanka - TBC!</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇬🇧</div>
+            <div class="activity-name">UK: Party games and quiz</div>
+            <div class="checkbox"></div>
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">📸</div>
+            <div class="activity-name">Photobooth</div>
+            <div class="checkbox"></div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        Team Building Event • Check off activities as completed
+    </div>
+</body>
+</html>

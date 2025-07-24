@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aligent Mid Year Event Schedule - Print</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.2;
+            color: #000;
+            background: white;
+            font-size: 10px;
+            margin: 0.4in 0.3in;
+        }
+        
+        .header {
+            border: 2px solid #000;
+            padding: 0.15in;
+            text-align: center;
+            margin-bottom: 0.2in;
+        }
+        
+        h1 {
+            color: #000;
+            font-size: 18px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .phase-header {
+            background: #e8e8e8;
+            color: #000;
+            padding: 0.06in 0.1in;
+            border: 1px solid #000;
+            margin: 0.1in 0 0.06in 0;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            page-break-after: avoid;
+        }
+
+        .phase-header:first-of-type {
+            margin-top: 0;
+        }
+
+        .schedule-item {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            border: 1px solid #666;
+            margin-bottom: 0.04in;
+            page-break-inside: avoid;
+        }
+
+        .time {
+            background: #f5f5f5;
+            color: #000;
+            font-weight: bold;
+            font-size: 9px;
+            padding: 0.06in 0.05in;
+            text-align: center;
+            border-right: 1px solid #666;
+            white-space: nowrap;
+        }
+
+        .activity {
+            padding: 0.06in 0.08in;
+            font-size: 10px;
+            color: #000;
+            line-height: 1.3;
+        }
+
+        .activity-highlight .time {
+            background: #d8d8d8;
+            font-weight: bold;
+        }
+
+        /* Ensure single page */
+        @page {
+            size: A4;
+            margin: 0.4in 0.3in;
+        }
+
+        @media print {
+            body {
+                margin: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Aligent Mid Year Event Schedule</h1>
+    </div>
+
+    <div class="phase-header">🛠️ Setup Phase</div>
+    
+    <div class="schedule-item">
+        <div class="time">12:00 - 2:00pm</div>
+        <div class="activity">Cultural activities setup</div>
+    </div>
+
+    <div class="schedule-item">
+        <div class="time">1:00 - 2:00pm</div>
+        <div class="activity">Food prep & setup</div>
+    </div>
+
+    <div class="phase-header">🎤 Opening & Team Formation</div>
+
+    <div class="schedule-item activity-highlight">
+        <div class="time">2:00 - 2:30pm</div>
+        <div class="activity">Jonathan's speech</div>
+    </div>
+
+    <div class="schedule-item">
+        <div class="time">2:30 - 2:45pm</div>
+        <div class="activity">Teams formation</div>
+    </div>
+
+    <div class="phase-header">🏆 Team Building Challenges</div>
+
+    <div class="schedule-item">
+        <div class="time">2:45 - 4:00pm</div>
+        <div class="activity">Team Building challenges (15min per challenge)</div>
+    </div>
+
+    <div class="phase-header">🎉 Cultural Activities & Social Time</div>
+
+    <div class="schedule-item">
+        <div class="time">4:00pm</div>
+        <div class="activity">Get the drinks out</div>
+    </div>
+
+    <div class="schedule-item">
+        <div class="time">4:00pm</div>
+        <div class="activity">Cultural activities open!</div>
+    </div>
+
+    <div class="schedule-item">
+        <div class="time">5:30 - 6:00pm</div>
+        <div class="activity">Pizza order reception</div>
+    </div>
+
+    <div class="phase-header">🧹 Wrap Up</div>
+
+    <div class="schedule-item">
+        <div class="time">7:00 - 8:00pm</div>
+        <div class="activity">Final clean up + bins out</div>
+    </div>
+
+    <div class="schedule-item">
+        <div class="time">8:00pm onwards</div>
+        <div class="activity">After Party</div>
+    </div>
+</body>
+</html>
