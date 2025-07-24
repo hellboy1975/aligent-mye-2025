@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aligent Team Building Event</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+        
+        .header-section {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,0 1000,80 0,100"/></svg>');
+            background-size: cover;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.025em;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .main-content {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .section-description {
+            font-size: 18px;
+            color: #6b7280;
+            text-align: center;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .card.active:hover {
+            border-color: #8b5cf6;
+        }
+        
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+        
+        .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1f2937;
+        }
+        
+        .card-description {
+            font-size: 16px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .coming-soon {
+            opacity: 0.6;
+            cursor: not-allowed;
+            position: relative;
+        }
+        
+        .coming-soon:hover {
+            transform: none;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-color: #e5e7eb;
+        }
+        
+        .coming-soon::after {
+            content: "Coming Soon";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #fbbf24;
+            color: #92400e;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .coming-soon .card-icon {
+            background: linear-gradient(135deg, #9ca3af, #6b7280);
+        }
+        
+        .footer {
+            background: #f9fafb;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-text {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+        
+        .aligent-branding {
+            font-size: 14px;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+            }
+            
+            .header-section {
+                padding: 60px 20px 40px;
+            }
+            
+            .main-content {
+                padding: 60px 20px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <div class="container">
+            <h1>Team Building Event</h1>
+            <p class="subtitle">Bringing our Aligent team together for collaboration, fun, and shared experiences</p>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="section">
+            <h2 class="section-title">Event Resources</h2>
+            <p class="section-description">Everything you need to track activities, navigate the event, and stay connected with your team.</p>
+            
+            <div class="cards-grid">
+                <a href="activity_checklist.html" class="card active">
+                    <div class="card-icon">✅</div>
+                    <div class="card-title">Activity Checklist</div>
+                    <div class="card-description">Interactive checklist to track all team activities and around-the-world stations. Perfect for coordinators and participants to stay organized.</div>
+                </a>
+                
+                <div class="card coming-soon">
+                    <div class="card-icon">🗺️</div>
+                    <div class="card-title">Event Map</div>
+                    <div class="card-description">Interactive venue map showing locations of all activities, stations, and facilities throughout the office space.</div>
+                </div>
+                
+                <div class="card coming-soon">
+                    <div class="card-icon">⏰</div>
+                    <div class="card-title">Event Schedule</div>
+                    <div class="card-description">Detailed timeline with start times, durations, and transitions between activities to keep everyone synchronized.</div>
+                </div>
+                
+
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Event Information</h2>
+            <p class="section-description">Additional resources and tools to enhance your team building experience.</p>
+            
+            <div class="cards-grid">
+                <div class="card coming-soon">
+                    <div class="card-icon">📱</div>
+                    <div class="card-title">Contact Directory</div>
+                    <div class="card-description">Emergency contacts, organizer details, and key personnel information for quick access during the event.</div>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Have an amazing time building connections and creating memories together!</p>
+            <p class="aligent-branding">Aligent Team Building Event 2025</p>
+        </div>
+    </div>
+</body>
+</html>

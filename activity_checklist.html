@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Building Activity Checklist</title>
+    <style>
+        @media print {
+            body { 
+                margin: 0.5in; 
+                background: white !important;
+                color: black !important;
+            }
+            .no-break { 
+                page-break-inside: avoid; 
+            }
+            .header {
+                background: none !important;
+                color: black !important;
+                border: 2px solid black;
+                margin: 0 0 1in 0;
+                padding: 0.5in;
+            }
+            h1 {
+                color: black !important;
+            }
+            .section {
+                background: white !important;
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+                margin-bottom: 0.5in;
+                padding: 0.3in;
+            }
+            .section-title {
+                color: black !important;
+                border-bottom: 1px solid #999 !important;
+            }
+            .activity-item {
+                border: none !important;
+                padding: 0.1in;
+                grid-template-columns: 40px 1fr 30px !important;
+            }
+            .activity-item:hover {
+                background-color: transparent !important;
+            }
+            .activity-name {
+                color: black !important;
+            }
+            .checkbox {
+                -webkit-appearance: none;
+                appearance: none;
+                border: 2px solid black !important;
+                background: white !important;
+                width: 16px;
+                height: 16px;
+                border-radius: 2px;
+            }
+            .checkbox:checked {
+                background: black !important;
+            }
+            .checkbox:checked::after {
+                content: '✓';
+                color: white;
+                font-size: 12px;
+                display: block;
+                text-align: center;
+                line-height: 12px;
+            }
+            .footer {
+                color: black !important;
+                border-top: 1px solid #999 !important;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 10px;
+            background: #ffffff;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin: -10px -10px 30px -10px;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,0 1000,80 0,100"/></svg>');
+            background-size: cover;
+        }
+        
+        .header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 48px;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .activity-item {
+            display: grid;
+            grid-template-columns: 50px 1fr 40px;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 16px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        
+        .activity-item:hover {
+            background-color: #f9fafb;
+            border-color: #e5e7eb;
+        }
+        
+        .emoji-column {
+            font-size: 20px;
+            text-align: center;
+            justify-self: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        
+        .activity-name {
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left;
+            color: #1f2937;
+        }
+        
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            justify-self: center;
+            cursor: pointer;
+            accent-color: #8b5cf6;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            
+            .header {
+                padding: 40px 15px 30px;
+                margin: -5px -5px 20px -5px;
+            }
+            
+            h1 {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+            
+            .section {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+            
+            .activity-item {
+                grid-template-columns: 45px 1fr 35px;
+                gap: 10px;
+                padding: 14px 8px;
+                margin-bottom: 8px;
+            }
+            
+            .emoji-column {
+                font-size: 18px;
+                gap: 2px;
+            }
+            
+            .activity-name {
+                font-size: 15px;
+                line-height: 1.4;
+            }
+            
+            .checkbox {
+                width: 22px;
+                height: 22px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+            
+            .section {
+                padding: 16px 12px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+            
+            .activity-item {
+                grid-template-columns: 40px 1fr 30px;
+                gap: 8px;
+                padding: 12px 6px;
+            }
+            
+            .emoji-column {
+                font-size: 16px;
+            }
+            
+            .activity-name {
+                font-size: 14px;
+            }
+            
+            .checkbox {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        .flag {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Team Building Activity Checklist</h1>
+        </div>
+    </div>
+    
+    <div class="section no-break">
+        <div class="section-title">🎯 Opening Ceremony</div>
+        <div class="activity-item">
+            <div class="emoji-column">🎤</div>
+            <div class="activity-name">Opening ceremony</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+    </div>
+    
+    <div class="section no-break">
+        <div class="section-title">🤝 Team Activities</div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🥢</div>
+            <div class="activity-name">Chopsticks relay</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">👓</div>
+            <div class="activity-name">Blindfold Drawing</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🧠</div>
+            <div class="activity-name">Memory challenge</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🌶️</div>
+            <div class="activity-name">Tasting challenge</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🍝</div>
+            <div class="activity-name">Spaghetti tower building</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">🌍 Around the World Activities</div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🍹</div>
+            <div class="activity-name">Drinks station</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇩🇰</div>
+            <div class="activity-name">Denmark: Lego, puzzle, quiz, beer</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🦄</div>
+            <div class="activity-name">Dominaria: Magic: The Gathering</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇨🇳</div>
+            <div class="activity-name">Chinese dumpling building</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🀄</div>
+            <div class="activity-name">Mahjong: lessons and games</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🏓</div>
+            <div class="activity-name">Table tennis: lessons and competition</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">
+                <span>🇦🇺</span>
+                <span>🇮🇪</span>
+            </div>
+            <div class="activity-name">Australia + Ireland: Beer tasting</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">
+                <span>🇧🇷</span>
+                <span>🇦🇷</span>
+            </div>
+            <div class="activity-name">South America food, music and games</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">
+                <span>🇮🇹</span>
+                <span>🇯🇵</span>
+            </div>
+            <div class="activity-name">Italian + Mario Kart</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇮🇳</div>
+            <div class="activity-name">Indian food + games</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇱🇹</div>
+            <div class="activity-name">Lithuanian basketball</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇫🇷</div>
+            <div class="activity-name">France - food, indoor petanque, music</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇱🇰</div>
+            <div class="activity-name">Sri Lanka - TBC!</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">🇬🇧</div>
+            <div class="activity-name">UK: Party games and quiz</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+        
+        <div class="activity-item">
+            <div class="emoji-column">📸</div>
+            <div class="activity-name">Photobooth</div>
+            <input type="checkbox" class="checkbox">
+        </div>
+    </div>
+    
+    <div class="footer">
+        Team Building Event • Check off activities as completed
+    </div>
+</body>
+</html>
