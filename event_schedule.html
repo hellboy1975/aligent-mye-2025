@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aligent Mid Year Event Schedule</title>
+    <style>
+        @media print {
+            body { 
+                margin: 0.3in; 
+                background: white !important;
+                color: black !important;
+            }
+            .header {
+                background: none !important;
+                color: black !important;
+                border: 2px solid black;
+                margin: 0 0 0.5in 0;
+                padding: 0.3in;
+            }
+            h1 {
+                color: black !important;
+                font-size: 20px !important;
+            }
+            .schedule-item {
+                border: 1px solid black !important;
+                background: white !important;
+                box-shadow: none !important;
+            }
+            .time {
+                color: black !important;
+                background: #f0f0f0 !important;
+            }
+            .activity {
+                color: black !important;
+            }
+            .phase-header {
+                background: #e0e0e0 !important;
+                color: black !important;
+                border: 2px solid black !important;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            margin: 0;
+            padding: 10px;
+            background: #ffffff;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin: -10px -10px 30px -10px;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,0 1000,80 0,100"/></svg>');
+            background-size: cover;
+        }
+        
+        .header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 48px;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .schedule-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .phase-header {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            margin: 32px 0 16px 0;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+        }
+
+        .phase-header:first-of-type {
+            margin-top: 0;
+        }
+
+        .schedule-item {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            align-items: center;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .schedule-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-color: #8b5cf6;
+        }
+
+        .time {
+            background: #f8f9fa;
+            color: #6366f1;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 20px 12px;
+            text-align: center;
+            border-right: 1px solid #e5e7eb;
+            white-space: nowrap;
+        }
+
+        .activity {
+            padding: 20px 24px;
+            font-size: 16px;
+            color: #1f2937;
+            font-weight: 500;
+        }
+
+        .activity-highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            color: #92400e;
+        }
+
+        .activity-setup {
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+            color: #3730a3;
+        }
+
+        .activity-main {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #166534;
+        }
+
+        .activity-social {
+            background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+            color: #be185d;
+        }
+
+        .activity-cleanup {
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            color: #374151;
+        }
+
+        .current-time {
+            border: 2px solid #10b981;
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+        }
+
+        .current-time .time {
+            background: #10b981;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 15px 30px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+
+            .schedule-container {
+                padding: 15px;
+            }
+
+            .schedule-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .time {
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 16px;
+            }
+
+            .activity {
+                padding: 16px;
+            }
+
+            .phase-header {
+                font-size: 18px;
+                padding: 12px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .time {
+                font-size: 14px;
+            }
+
+            .activity {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Event Schedule</h1>
+        </div>
+    </div>
+
+    <div class="schedule-container">
+        <div class="phase-header">🛠️ Setup Phase</div>
+        
+        <div class="schedule-item">
+            <div class="time activity-setup">12:00 - 2:00pm</div>
+            <div class="activity">Cultural activities setup</div>
+        </div>
+
+        <div class="schedule-item">
+            <div class="time activity-setup">1:00 - 2:00pm</div>
+            <div class="activity">Food prep & setup</div>
+        </div>
+
+        <div class="phase-header">🎤 Opening & Team Formation</div>
+
+        <div class="schedule-item">
+            <div class="time activity-highlight">2:00 - 2:30pm</div>
+            <div class="activity">Jonathan's speech</div>
+        </div>
+
+        <div class="schedule-item">
+            <div class="time activity-main">2:30 - 2:45pm</div>
+            <div class="activity">Teams formation</div>
+        </div>
+
+        <div class="phase-header">🏆 Team Building Challenges</div>
+
+        <div class="schedule-item">
+            <div class="time activity-main">2:45 - 4:00pm</div>
+            <div class="activity">Team Building challenges (15min per challenge)</div>
+        </div>
+
+        <div class="phase-header">🎉 Cultural Activities & Social Time</div>
+
+        <div class="schedule-item">
+            <div class="time activity-social">4:00pm</div>
+            <div class="activity">Get the drinks out</div>
+        </div>
+
+        <div class="schedule-item">
+            <div class="time activity-social">4:00pm</div>
+            <div class="activity">Cultural activities open!</div>
+        </div>
+
+        <div class="schedule-item">
+            <div class="time activity-social">5:30 - 6:00pm</div>
+            <div class="activity">Pizza order reception</div>
+        </div>
+
+        <div class="phase-header">🧹 Wrap Up</div>
+
+        <div class="schedule-item">
+            <div class="time activity-cleanup">7:00 - 8:00pm</div>
+            <div class="activity">Final clean up + bins out</div>
+        </div>
+
+        <div class="schedule-item">
+            <div class="time activity-social">8:00pm onwards</div>
+            <div class="activity">After Party</div>
+        </div>
+    </div>
+</body>
+</html>
